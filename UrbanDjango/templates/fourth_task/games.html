@@ -1,0 +1,26 @@
+
+{% extends "fourth_task/menu.html" %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    </head>
+    <title>Иры</title>
+<body>
+    {% block pagename %}<h3>Игры</h3>{% endblock %}
+    {% block menu %}
+        <p><a href="/platform">Главная</a></p>
+        <p><a href="/games">Магазин</a></p>
+        <p><a href="/cart">Корзина</a></p>
+    {% endblock %}
+</body>
+    <main>
+        {% block content %}
+        {% for game in games %}
+            <ul>
+                <li> {{game}} <button>Купить</button></li>
+            </ul>
+        {% endfor %}
+        {% endblock %}
+    </main>
+</html>
